@@ -1,57 +1,30 @@
-<?php include('server.php'); ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>User Registration Page</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<div class="header">
-		<h2>Register</h2>
-	</div>
-	<form method="post" action="register.php">
+<?php include('conn.php');?>
 
-		<!--display validation errors -->
-		<?php include('errors.php'); ?>
+<?php
+    #id
+    $id=rand(10,100000);
 
-		<div class="input-group">
-			<label>Username</label>
-			<input type="text" name="Username" value="<?php echo $Username; ?>">
-			
-		</div>
-		<div class="input-group">
-		     <label>Email</label>
-		     <input type="text" name="Email" value="<?php echo $Email; ?>">
+    #fetch values
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email_address = $_POST['email_address'];
+    $password = $_POST['password'];
+    $class = $_POST['class'];
 
-	</div>
-	<div class="input-group">
-		     <label>Password</label>
-		     <input type="text" name="Password_1">
+    #hash password
+    $password = password_hash($password, PASSWORD_DEFAULT);
 
 
-	</div>
-	<div class="input-group">
-		     <label>Confirm Password</label>
-		     <input type="text" name="Password_2">
+    #create sql statement
+    $sql = "INSERT INTO users VALUES ('".$id."','".$first_name."','".$last_name."','".$email_address."','".$password."','".$class."')";
 
 
-	</div>
-	<div class="input-group">
-		     <button type="submit" name="Register" class="btn">Register</button>
+    #conditional rendering
+    if ($conn->query($sql) === TRUE) {
+        header('location: login.php');
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 
-	<div class="input-group">
-		     <button type="submit" name="Admin" class="btn">Admin</button>
-
-	</div>
-	
-	<p>
-		Already a member? <a href="login.php">Sign in</a>
-	</p>
-
-</form>
-
-
-
-
-</body>
-</html>
+    $conn->close();
+?>

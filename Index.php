@@ -1,49 +1,20 @@
+<?php include('header.php'); ?>
+<div class="row .d-flex justify-content-center my-1">
+    <div class="col-md-6">
 
-//if user is not logged in they canot access this page
-if(empty($_SESSION['username'])) {
-	header('location: login.php');
-}
-
-//if admin is not logged in they cannot acces this page
-if(empty($_SESSION['admin_name'])) {
-	header('location: admin.php');
-}
-
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>STD Diagnosis system</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<div class="header">
-         <h2>Home page</h2>
-	</div>
-
-	<div class="content">
-		<?php if (isset($_SESSION['success'])): ?>
-		<div class="error success">
-			<h3>
-				<?php
-				echo $_SESSION['success'];
-				unset($_SESSION['success']);
-				?>
-
-				</h3>
-
+        <h1>Medical Search</h1>
+        <div class="alert alert-success">Register</div> 
+        <form action="register.php" method="post">
+            <input type="text" class="form-control my-1" name="first_name" placeholder="First Name">
+            <input type="text" class="form-control my-1" name="last_name" placeholder="Last Name">
+            <input type="text" class="form-control my-1" name="email_address" placeholder="Email Address">
+            <input type="password" class="form-control my-1" name="password" placeholder="Password">
+            <input type="hidden" class="form-control my-1" name="class" value="user">
+            <input type="submit" value="Enter" class="form-control my-1 btn btn-success">
+            <input type="reset" value="Clear" class="form-control my-1 btn btn-secondary">
+            <hr>
+            <a class="badge badge-warning d-flex align-self-center text-center" href="login.php">Sign In Here</a>
+        </form>
+    </div>
 </div>
-<?php endif ?>
-
-<?php if (isset($_SESSION["username"])): ?> 
-  <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
- <p><a href="" style="color: blue;">Logout</a></p>
-
- <?php if (isset($_SESSION["admin_name"])): ?> 
-  <p>Welcome <strong><?php echo $_SESSION['admin_name']; ?></strong></p>
- <p><a href="" style="color: red;">Logout</a></p>
-<?php endif ?>
-</div>
-
-</body>
-</html>
+<?php include('footer.php'); ?>
