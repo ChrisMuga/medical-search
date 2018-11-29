@@ -1,4 +1,5 @@
 <?php include('header.php'); ?>
+<?php include('navbar.php'); ?>
 <?php $id = rand(10,10000);?>
 <style>
 label{font-size:20px; font-weight:bold;}

@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
 <?php include('conn.php'); ?>
-
+<?php include('navbar.php'); ?>
 <div class="row .d-flex justify-content-center my-1">
     <div class="col-md-12 users">
     <h1 class="text-danger text-center">Search For Symptoms</h1>

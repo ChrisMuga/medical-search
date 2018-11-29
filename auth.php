@@ -1,4 +1,5 @@
-<?php include('conn.php');?>
+
+<?php session_start(); include('conn.php');?>
 
 <?php
     #fetch
@@ -17,6 +18,8 @@
            #auth check
            if(password_verify($password, $hashed_password)) 
             {
+                $_SESSION['name'] = $row['first_name']." ".$row['last_name'];
+                $_SESSION['id'] = $row['id'];
                 header('location: home.php');
             } 
             else
