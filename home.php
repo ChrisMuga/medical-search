@@ -3,10 +3,12 @@
 
 <div class="row .d-flex justify-content-center my-1">
     <div class="col-md-12 users">
+    <h1 class="text-danger text-center">Search For Symptoms</h1>
+    <hr>
       <!-- table -->
       <div id="users">
   <input class="form-control search" placeholder="Search" />
-  <button class="btn btn-danger my-1" class="sort" data-sort="name">
+  <button class="btn btn-danger my-4" class="sort" data-sort="name">
     Sort by Symptoms
   </button>
   <table class="table">
