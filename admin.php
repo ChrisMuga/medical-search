@@ -3,8 +3,8 @@
     <div class="col-md-6">
 
         <h1>Medical Search</h1>
-        <div class="alert alert-success">Login</div> 
-        <form action="auth.php" method="post">
+        <div class="alert alert-success">Admin-Login</div> 
+        <form action="admin-auth.php" method="post">
             <input type="text" class="form-control my-1" name="email_address" placeholder="Email Address" required>
             <input type="password" class="form-control my-1" name="password" placeholder="Password" required>
             <input type="submit" value="Enter" class="form-control my-1 btn btn-success">

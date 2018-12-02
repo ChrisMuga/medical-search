@@ -7,7 +7,7 @@
     $email_address = $_POST['email_address'];
 
     #query
-    $sql = "SELECT * FROM users WHERE email_address = '".$email_address."'";
+    $sql = "SELECT * FROM users WHERE email_address = '".$email_address."' AND class='admin'";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
@@ -21,7 +21,7 @@
                 $_SESSION['name'] = $row['first_name']." ".$row['last_name'];
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['class'] = $row['class'];
-                header('location: home.php');
+                header('location: admin-dash.php');
             } 
             else
             {

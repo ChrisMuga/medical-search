@@ -10,7 +10,9 @@
         <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="register-disease.php">Admin</a>
+        <?php if($_SESSION['class'] == 'admin'){ ?>
+          <a class="nav-link" href="admin-dash.php">Dashboard</a>
+        <?php } ?>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">Logout</a>

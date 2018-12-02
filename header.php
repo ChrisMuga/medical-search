@@ -18,4 +18,4 @@ session_start();
     <title><?php echo $title; ?></title>
   </head>
   <body>
-  <div class="container">
+  <div class="container-fluid">
