@@ -2,54 +2,49 @@
 <?php include('navbar.php'); ?>
 <?php $id = rand(10,10000);?>
 <style>
-label{font-size:20px; font-weight:bold;}
+.col-center{margin-top:33.3333vh;}
+.col-md-3{text-align:center;}
+.col-md-3:hover{cursor:pointer;}
+img{align-self:center;}
+p{font-size: 14px; text-align:center; font-weight: bold;}
 </style>
-<form action="enter-disease.php" method="post">
-<div class="row .d-flex justify-content-center my-1">
-    <div class="col-md-12">
+<div class="row d-flex justify-content-center mt-4">
+    <div class='col-md-8 col-center'>
         <div class="row">
-            <!-- col -->
-            <div class="col-md-4">
-                <h1>Medical Search</h1>
-                <div class="alert alert-success">Register Disease</div> 
-                
-                    <h3 class="text-danger">ID: <?php echo $id;?> </h3>
-                    <input type="hidden" class="form-control my-1" name="id" value="<?php echo $id; ?>">
-                    <hr>
-                    <label for="">Disease Name</label>
-                    <input type="text" class="form-control my-1" name="disease_name" placeholder="Disease Name">
-                    <label for="">Category</label>
-                    <select class="form-control" name="category">
-                        <option value="STD">STD</option>
-                        <option value="IMMUNO-DEFICIENCY DISEASE">IMMUNO-DEFICIENCY DISEASE</option>
-                        <option value="GENERAL">GENERAL</option>
-                    </select>
-                    <label for="">Symptoms</label>
-                    <textarea class="form-control" name="symptoms" id="" cols="30" rows="10"></textarea>
-                   
-                
-            </div>
-            <!-- col -->
-            <!-- col -->
-            <div class="col-md-4">
-                <label for="">Prescription</label>
-                <textarea class="form-control" name="prescription" id="" cols="30" rows="10"></textarea>
-                            
-            </div>
-            <!-- col -->
-             <!-- col -->
-             <div class="col-md-4">
-                <label for="">Comments</label>
-                <textarea class="form-control" name="comments" id="" cols="30" rows="10"></textarea>
+            <!-- item -->
+            <div class="col-md-3">
+                <img src="assets/users.png" alt="Users">
                 <hr>
-                <input type="submit" value="Enter" class="form-control my-1 btn btn-success">
-                <input type="reset" value="Clear" class="form-control my-1 btn btn-secondary">
-               
+                <p>USERS</p>
             </div>
-            <!-- col -->
-        </div>
+            <!-- item -->
+
+            <!-- item -->
+            <div class="col-md-3">
+                <img src="assets/register.png" alt="Users">
+                <hr>
+                <p>REGISTER DISEASE</p>
+            </div>
+            <!-- item -->
+
+
+            <!-- item -->
+            <div class="col-md-3">
+                <img src="assets/science.png" alt="Users">
+                <hr>
+                <p>DISEASES</p>
+            </div>
+            <!-- item -->
+
+            <!-- item -->
+            <div class="col-md-3">
+                <img src="assets/pin.png" alt="Users">
+                <hr>
+                <p>RECENTLY ADDED DISEASE</p>
+            </div>
+            <!-- item -->
         
+        </div>
     </div>
 </div>
-</form>
 <?php include('footer.php'); ?>
