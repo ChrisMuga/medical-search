@@ -6,7 +6,7 @@ label{font-size:20px; font-weight:bold;}
 </style>
 <form action="enter-disease.php" method="post">
 <div class="row .d-flex justify-content-center my-1">
-    <div class="col-md-12">
+    <div class="col-md-10">
         <div class="row">
             <!-- col -->
             <div class="col-md-4">
