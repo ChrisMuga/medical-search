@@ -1,6 +1,10 @@
 <?php include('header.php'); ?>
 <?php include('conn.php'); ?>
 <?php include('navbar.php'); ?>
+<style>
+td{font-size:small}
+.d-name{font-weight: bold;}
+</style>
 <div class="row .d-flex justify-content-center my-1">
     <div class="col-md-12 users">
     <h1 class="text-danger text-center">Search For Symptoms</h1>
@@ -34,7 +38,7 @@
                 {
             ?>
                         <tr>
-                            <td><?php echo strtoupper($row['disease_name']);?></td>
+                            <td class='d-name text-danger'><?php echo strtoupper($row['disease_name']);?></td>
                             <td><?php echo strtoupper($row['category']);?></td>
                             <td class="name"><?php echo strtoupper($row['symptoms']);?></td>
                             <td><?php echo strtoupper($row['prescription']);?></td>

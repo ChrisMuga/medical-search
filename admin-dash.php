@@ -8,6 +8,7 @@
 .col-md-3:hover{cursor:pointer;}
 img{align-self:center;}
 p{font-size: 14px; text-align:center; font-weight: bold;}
+.bold{font-weight:bold;}
 </style>
 <div class="row d-flex justify-content-center mt-4">
     <div class='col-md-8 col-center'>
@@ -71,6 +72,24 @@ p{font-size: 14px; text-align:center; font-weight: bold;}
       </div>
       <div class="modal-body">
         <h1 class="text-center text-danger"><?php echo $_SESSION['disease_name']; ?></h1>
+        <span class="badge badge-warning"><?php echo $_SESSION['disease_category']; ?></span>
+        <hr>
+        <ul class="list-group">
+            <li class="list-group-item active"><h6>SYMPTOMS</h6></li>
+            <?php foreach($symptoms as $index=>$symptom){?>
+                <li class="list-group-item"><span class="badge badge-primary"><?php echo $index+1; ?></span> <span class="text-dark bold"><?php echo strtoupper($symptom); ?></span></li>
+            <?php } ?>
+        </ul>
+        <hr>
+        <h6 class="text-danger">PRESCRIPTION</h6>
+        <p><?php echo $_SESSION['disease_prescription']; ?></p>
+        <h6 class="text-danger">COMMENTS</h6>
+        <p><?php echo $_SESSION['disease_comments']; ?></p>
+
+        
+
+
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

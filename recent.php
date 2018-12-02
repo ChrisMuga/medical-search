@@ -15,6 +15,10 @@ if ($result->num_rows > 0) {
        $_SESSION['disease_symptoms'] = $row['symptoms'];
        $_SESSION['disease_prescription'] = $row['prescription'];
        $_SESSION['disease_comments'] = $row['comments'];
+
+       #load to array
+       $symptoms = explode(",",$_SESSION['disease_symptoms']);
+
     }
 } else {
     echo "0 results";

@@ -11,10 +11,13 @@
     $prescription = $_POST['prescription'];
     $comments = $_POST['comments'];
 
+    #timestamp
+    $timestamp = date("d-m-Y h:i:sa");
+
 
 
     #create sql statement
-    $sql = "INSERT INTO diseases VALUES ('".$id."','".$disease_name."','".$category."','".$symptoms."','".$prescription."','".$comments."')";
+    $sql = "INSERT INTO diseases VALUES ('".$id."','".$disease_name."','".$category."','".$symptoms."','".$prescription."','".$comments."','".$timestamp."')";
 
 
     #conditional rendering

@@ -21,15 +21,21 @@
                 $_SESSION['name'] = $row['first_name']." ".$row['last_name'];
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['class'] = $row['class'];
+                $_SESSION['auth'] = 1;
                 header('location: home.php');
             } 
             else
             {
+                $_SESSION['auth'] = 0;
+                $_SESSION['auth_msg'] = 'Error: Wrong Credentials | Network Error';
                 header('location: login.php');
             }
+         
         }
     } else {
-        echo "0 results";
+                $_SESSION['auth'] = 0;
+                $_SESSION['auth_msg'] = 'Error: Wrong Credentials | Network Error';
+                header('location: login.php');
     }
     $conn->close();
 ?>

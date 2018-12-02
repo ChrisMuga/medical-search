@@ -9,6 +9,9 @@
 img{align-self:center;}
 p{font-size: 14px; text-align:center; font-weight: bold;}
 </style>
+<style>
+td{font-size:small}
+</style>
 <div class="row d-flex justify-content-center mt-4">
    <div class="col-md-8 text-center">
         <img src="assets/users.png" alt="Users">
@@ -27,10 +30,10 @@ p{font-size: 14px; text-align:center; font-weight: bold;}
   <table class="table mt-4">
   <thead class="thead-light">
                 <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Symptoms</th>
-                    <th scope="col">Prescription</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">EMAIL</th>
+                    <th scope="col">CLASS</th>
                 </tr>
             </thead>
     <!-- IMPORTANT, class="list" have to be at tbody -->
